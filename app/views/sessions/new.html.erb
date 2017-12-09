@@ -1,0 +1,22 @@
+<div class="ui hidden divider"></div>
+
+
+<div class="ui segment">
+  <h1 class="ui header">New Session</h1>
+
+  <%= form_for :session, url: sessions_path,
+    method: :create, html: { class: "ui form" } do |f| %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div class="field">
+      <%= f.label :dni, 'DNI' %><br>
+      <%= f.text_field :dni %>
+    </div>
+    <div class="field">
+      <%= f.label :supply_code, 'Codigo de Suministro' %><br>
+      <%= f.text_field :supply_code %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Iniciar Sesión", class: "ui primary button" %>
+    </div>
+  <% end %>
+</div>

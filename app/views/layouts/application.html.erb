@@ -9,6 +9,32 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="ui container">
+      <div class="ui large menu">
+        <div class="header item">
+          <a href="/">Desafios Agua</a>
+        </div>
+        <nav class="right menu">
+          <% if current_user %>
+            <div class="item">
+              <a class="ui primary button">5%</a>
+            </div>
+            <div class="item">
+              <%= link_to 'Cerrar Sesion', sessions_path, method: :delete, class: "ui button" %>
+            </div>
+          <% else %>
+            <div class="item">
+              <%= link_to 'Iniciar Sesion', new_sessions_path %>
+            </div>
+          <% end %>
+        </nav>
+      </div>
+    </header>
+    <section class="ui container">
+      <%= yield %>
+    </section>
+    <footer>
+
+    </footer>
   </body>
 </html>

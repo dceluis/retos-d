@@ -31,7 +31,11 @@
     <%= form.text_field :dni, id: :user_dni %>
   </div>
 
-  <div class="actions">
-    <%= form.submit "Registrar", class: "ui primary button" %>
+  <div class="field">
+    <%= form.submit "Registrar mi Usuario", class: "ui primary fluid button" %>
   </div>
+
+  <div class="ui horizontal divider">o</div>
+
+  <%= form.submit "Inicia Sesión", class: "ui button" %>
 <% end %>

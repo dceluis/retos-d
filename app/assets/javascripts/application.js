@@ -14,4 +14,11 @@
 //= require rails-ujs
 //= require turbolinks
 //= require cocoon
+//= require paloma
+//= require semantic-ui
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+  Paloma.start();
+})
+

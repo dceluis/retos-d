@@ -5,6 +5,8 @@ class ChallengesController < ApplicationController
   # GET /challenges.json
   def index
     @challenges = Challenge.all
+
+    js progress:  current_user.completed_challenges.count / Challenge.count
   end
 
   # GET /challenges/1

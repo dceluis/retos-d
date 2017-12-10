@@ -1,29 +1,156 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Challenges</h1>
+<div class="ui pointing secondary menu">
+  <a class="active item menu" data-tab="principal">Principal</a>
+  <a class="item menu" data-tab="reto">Retos</a>
+</div>
+<div class="ui hidden divider"></div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="ui active  tab " data-tab="principal">
+  <h2 class="ui header">
+    <i class="blue bar chart icon"></i>
+    <div class="content">
+      Resumen Mensual
+      <div class="sub header">Noviembre 2017</div>
+    </div>
+  </h2>
+</div>
+<div class="ui tab " data-tab="reto">
+  <h2 class="ui header">
+    <i class="red flag checkered  icon"></i>
+    <div class="content">
+      Tu Progreso
+      <div class="sub header">Noviembre 2017</div>
+    </div>
+  </h2>
 
-  <tbody>
-    <% @challenges.each do |challenge| %>
-      <tr>
-        <td><%= challenge.title %></td>
-        <td><%= challenge.description %></td>
-        <td><%= link_to 'Show', challenge %></td>
-        <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
-        <td><%= link_to 'Destroy', challenge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="ui teal progress" id="example3">
+    <div class="bar">
+      <div class="progress"></div>
+    </div>
+  </div>
 
-<br>
+  <div class="ui hidden divider"></div>
+
+  <div class="ui pointing secondary menu trimestre">
+    <a class="active item trimestre" data-tab="tri1">Principiante</a>
+    <a class="item trimestre" data-tab="tri2">Intermedio</a>
+    <a class="item trimestre" data-tab="tri3">Avanzado</a>
+    <a class="item trimestre" data-tab="tri4">Master</a>
+  </div>
+
+  <div class="ui hidden divider"></div>
+
+  <div class="ui active tab" data-tab="tri1">
+    <div class="ui grid">
+      <% @challenges.each do |challenge| %>
+        <div class="four wide column">
+          <%= link_to challenge_path(challenge), class: "ui card" do %>
+            <div class="image">
+              <img src="http://lorempixel.com/400/400/" alt="">
+            </div>
+            <div class="content">
+              <div class="header">
+                <%= challenge.title %>
+              </div>
+              <div class="description">
+                <%= challenge.description %>
+              </div>
+            </div>
+            <div class="extra content">
+              <div class="field">Recomendaciones</div>
+              <div class="ui bulleted list">
+                <div class="item">No seas... </div>
+                <div class="item">No leas..</div>
+                <div class="item">Que quieres?</div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="ui tab " data-tab="tri2">
+    <div class="ui three column grid">
+      <div class="column">
+        <div class="ui card">
+          <div class="content">
+            <div class="right floated meta"><i class="share icon"></i></div>
+            Abril
+          </div>
+          <div class="content">
+            <div class="field">
+              <i class="ui green check icon"></i>Puntualidad
+            </div>
+            <div class="field">
+              <i class="ui green check icon"></i>Eficiencia
+            </div>
+          </div>
+          <div class="content">
+            <div class="field">Recomendaciones</div>
+            <div class="ui bulleted list">
+              <div class="item">No seas... </div>
+              <div class="item">No leas..</div>
+              <div class="item">Que quieres?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui card disabled">
+          <div class="content">
+            <div class="right floated meta"><i class="share icon"></i></div>
+            Mayo
+          </div>
+          <div class="content">
+            <div class="field">
+              <i class="ui red remove icon"></i>Puntualidad
+            </div>
+            <div class="field">
+              <i class="ui green check icon"></i>Eficiencia
+            </div>
+          </div>
+          <div class="content">
+            <div class="field">Recomendaciones</div>
+            <div class="ui bulleted list">
+              <div class="item">No seas... </div>
+              <div class="item">No leas..</div>
+              <div class="item">Que quieres?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="ui card">
+          <div class="content">
+            <div class="right floated meta"><i class="share icon"></i></div>
+            Junio
+          </div>
+          <div class="content">
+            <div class="field">
+              <i class="ui green check icon"></i>Puntualidad
+            </div>
+            <div class="field">
+              <i class="ui green check icon"></i>Eficiencia
+            </div>
+          </div>
+          <div class="content">
+            <div class="field">Recomendaciones</div>
+            <div class="ui bulleted list">
+              <div class="item">No seas... </div>
+              <div class="item">No leas..</div>
+              <div class="item">Que quieres?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ui tab " data-tab="tri3"></div>
+  <div class="ui tab " data-tab="tri4"></div>
+
+</div>
+
 
 <%= link_to 'New Challenge', new_challenge_path %>

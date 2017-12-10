@@ -1,39 +1,37 @@
-<%= form_with(model: challenge, local: true) do |form| %>
-  <% if challenge.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(challenge.errors.count, "error") %> prohibited this challenge from being saved:</h2>
+<%= form_with(model: challenge, local: true, html: { class: 'ui form' }) do |form| %>
+  <div class="ui grid">
+    <div class="eight wide column">
+      <div class="field">
+        <%= form.label :title %>
+        <%= form.text_field :title, id: :challenge_title %>
+      </div>
 
-      <ul>
-      <% challenge.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title, id: :challenge_title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :challenge_description %>
-  </div>
-
-  <div id="nested-form">
-    <div class="field">
-      <%= form.label :goals %>
-      <%= form.fields_for :goals do |goal| %>
-        <%= render 'goal_fields', f: goal %>
-      <% end %>
-      <div class="links">
-        <%= link_to_add_association 'Add Goal', form, :goals %>
+      <div class="field">
+        <%= form.label :description %>
+        <%= form.text_area :description, id: :challenge_description %>
       </div>
     </div>
+
+    <div class="eight wide column">
+      <h3 class="ui dividing header">
+        Objetivos
+      </h3>
+      <div id="nested-form">
+        <div class="field">
+          <%= form.fields_for :goals do |goal| %>
+            <%= render 'goal_fields', f: goal %>
+          <% end %>
+          <div class="links">
+            <%= link_to_add_association 'Add Goal', form, :goals, class: 'ui button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sixteen column wide actions">
+      <%= form.submit 'Crear Desafío', class: "ui primary button" %>
+      <%= link_to 'Back', challenges_path, class: 'ui button' %>
+    </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

@@ -14,7 +14,7 @@
       <header class="ui container">
         <div class="ui secondary pointing huge menu">
           <%= link_to 'Mis Datos', dashboard_show_path, id: 'dashboard_active', class: 'header item' %>
-          <%= link_to 'Desafios', challenges_path, id: 'challenges_active', class: 'item' %>
+          <%= link_to 'Desafios', user_challenges_path, id: 'user_challenges_active', class: 'item' %>
           <div class="right menu">
             <%= link_to 'Cerrar Sesión', sessions_path, method: :delete, class: 'item' %>
           </div>

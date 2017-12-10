@@ -1,11 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="ui horizontal segments">
+  <div class="ui segment">
+    <h1 class="ui header">
+      <%= @user_challenge.title %>
+      <div class="sub header"> <%= @user_challenge.description %> </div>
+    </h1>
+    <div class="ui large list">
+      <% @user_challenge.goals.each do |goal| %>
+        <div class="item">
+          <p><i class="circular theme blue icon"></i> <%= goal.description %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="ui segment">
+    <div class="ui centered grid">
+      <div class="ui green statistic">
+        <div class="label">
+          gasta menos de
+        </div>
+        <div class="value">
+          1000 l.
+        </div>
+        <div class="label">
+          al día
+        </div>
+      </div>
 
-<p>
-  <%= @user_challenge.title %>
-</p>
+      <div class="ui divider"></div>
 
-<p>
-  <%= @user_challenge.title %>
-</p>
+      <div class="ui green statistic">
+        <div class="label">
+          paga el recibo
+        </div>
+        <div class="value">
+          A tiempo
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <%= link_to 'Back', user_challenges_path %>
+<%= link_to 'Complete', user_challenge_complete_path(@user_challenge), method: :post %>

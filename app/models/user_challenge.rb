@@ -4,7 +4,7 @@ class UserChallenge < ApplicationRecord
 
   belongs_to :challenge
 
-  delegate :description, :title, to: :challenge
+  delegate :description, :title, :goals, to: :challenge
 
   enum status: [:locked, :unlocked, :active, :complete]
 

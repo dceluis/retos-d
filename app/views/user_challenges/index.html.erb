@@ -20,7 +20,7 @@
   <div class="ui active tab" data-tab="tri1">
     <div class="ui grid">
       <% @user_challenges.each do |user_challenge| %>
-        <% disabled = user_challenge.status == :locked %>
+        <% disabled = user_challenge.status == 'locked' %>
         <div class="four wide column">
           <div class="ui card <%= "#{'disabled' if disabled}" %>">
             <div class="ui centered small circular image">

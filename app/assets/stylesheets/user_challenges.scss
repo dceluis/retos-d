@@ -1,8 +1,16 @@
 // Place all the styles related to the user_challenges controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.challenges-index {
+.user_challenges-index {
   main {
     padding-bottom: 4em;
+  }
+}
+
+.user_challenges-show {
+  .horizontal.segments{
+    .header {
+      font-size: 3em;
+    }
   }
 }

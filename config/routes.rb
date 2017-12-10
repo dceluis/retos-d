@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'dashboard/show'
+
   resources :user_challenges
   resources :challenges
-  root to: 'sessions#new'
+  root to: 'users#new'
 
 
   resources :users

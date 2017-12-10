@@ -22,7 +22,7 @@
     <div class="ui grid">
       <% @challenges.each do |challenge| %>
         <div class="four wide column">
-          <%= link_to challenge_path(challenge), class: "ui card" do %>
+        <%= link_to challenge_path(challenge), class: "ui card #{'disabled' if challenge.locked_for? current_user}" do %>
             <div class="ui centered small circular image">
               <%= image_tag "#{challenge.id}.png" %>
             </div>
@@ -30,13 +30,18 @@
               <div class="header">
                 <%= challenge.title %>
               </div>
-              <div class="description">
+              <div class="ui blurring vertical segment">
+                <div class="ui inverted dimmer"></div>
+                <p>
                 <%= challenge.description %>
+                </p>
               </div>
             </div>
             <div class="extra content">
-              <span></span>
-              <span class="right floated"><%= [1,3,5,6,7,9].shuffle.first %>0% lo logró</span>
+              <button class="ui button">
+                <i class="user icon"></i> Empezar
+              </button>
+              <span class="right floated"><%= [1,3,5,6,7,9].shuffle.first %>0%</span>
             </div>
           <% end %>
         </div>

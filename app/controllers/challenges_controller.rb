@@ -7,7 +7,7 @@ class ChallengesController < ApplicationController
   def index
     @challenges = Challenge.all
 
-    js progress:  current_user.completed_challenges.count / Challenge.count
+    js progress: current_user.completed_challenges.count / Challenge.count, active_challenges: current_user.active_challenges.pluck(:id)
   end
 
   # GET /challenges/1

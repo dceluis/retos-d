@@ -41,6 +41,7 @@ gem "cocoon"
 gem 'paloma'
 gem "flutie"
 gem 'chart-js-rails'
+gem 'ejs'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

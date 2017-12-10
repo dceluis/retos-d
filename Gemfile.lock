@@ -68,6 +68,7 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.3)
     diff-lcs (1.3)
+    ejs (1.1.1)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -214,6 +215,7 @@ DEPENDENCIES
   chart-js-rails
   cocoon
   coffee-rails (~> 4.2)
+  ejs
   flutie
   jbuilder (~> 2.5)
   jquery-rails

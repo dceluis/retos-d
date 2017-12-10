@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :challenges
   root to: 'sessions#new'
 
 

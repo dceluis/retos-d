@@ -33,9 +33,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 #
+gem 'jquery-rails'
 gem 'semantic-ui-sass'
 gem 'acts_as_list'
 gem "pundit"
+gem "cocoon"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -16,9 +16,13 @@
 //= require cocoon
 //= require paloma
 //= require semantic-ui
+//= require Chart.min
 //= require_tree .
 
 document.addEventListener("turbolinks:load", function() {
   Paloma.start();
+  $('.message .close').on('click', function() {
+    $(this).closest('.message').transition('fade') ;
+  });
 })
 

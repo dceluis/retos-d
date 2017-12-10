@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     session[:user_id] = @user.id if @user
 
-    redirect_to root_path
+    redirect_to dashboard_show_path
   end
 
   def destroy

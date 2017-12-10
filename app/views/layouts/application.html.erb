@@ -6,14 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= semantic_flash %>
   </head>
 
-  <body>
+  <body class="<%= body_class %>">
     <% if current_user %>
       <header class="ui container">
         <div class="ui secondary pointing huge menu">
-          <a href="/" class="header item" id='users_active'>Desafios Agua</a>
-          <%= link_to 'Mis Datos', dashboard_show_path, id: 'dashboard_active', class: 'item' %>
+          <%= link_to 'Mis Datos', dashboard_show_path, id: 'dashboard_active', class: 'header item' %>
           <%= link_to 'Desafios', challenges_path, id: 'challenges_active', class: 'item' %>
           <div class="right menu">
             <%= link_to 'Cerrar Sesión', sessions_path, method: :delete, class: 'item' %>
@@ -21,11 +21,15 @@
         </div>
       </header>
     <% end %>
-    <section>
+    <main class="ui container">
       <%= yield %>
-    </section>
-    <footer>
-
+    </main>
+    <footer class="ui mini inverted bottom fixed menu">
+      <div class="ui container">
+        <div class="item">
+          <%= image_tag 'logo-progobernabilidad.jpg', class: "ui small image" %>
+        </div>
+      </div>
     </footer>
     <%= insert_paloma_hook %>
   </body>

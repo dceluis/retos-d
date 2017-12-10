@@ -1,2 +1,289 @@
-<h1>Dashboard#show</h1>
-<p>Find me in app/views/dashboard/show.html.erb</p>
+<div class="ui hidden divider"></div>
+
+<div class="ui bottom attached container">
+  <div class="ui hidden divider"></div>
+
+  <div class="ui active  tab " data-tab="principal">
+
+    <div class="ui grid two columns">
+      <div class="six wide column">
+        <div class="ui form">
+          <div class="inline fields">
+            <label>Que tal lo hice en</label>
+
+            <div class="field">
+              <div class="ui selection dropdown">
+                <input type="hidden" name="Mes">
+                <i class="dropdown icon"></i>
+                <div class=" text">Noviembre</div>
+                <div class="menu">
+                  <div class="item" data-value="1">Enero</div>
+                  <div class="item" data-value="2">Febrero</div>
+                  <div class="item" data-value="3">Marzo</div>
+                  <div class="item" data-value="4">Abril</div>
+                  <div class="item" data-value="5">Mayo</div>
+                  <div class="item" data-value="6">Junio</div>
+                  <div class="item" data-value="7">Julio</div>
+                  <div class="item" data-value="8">Agosto</div>
+                  <div class="item" data-value="9">Setiembre</div>
+                  <div class="item" data-value="10">Octubre</div>
+                  <div class="item active " data-value="11">Noviembre</div>
+                  <div class="item " data-value="12">Diciembre</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="ui hidden divider"></div>
+        <div class="ui divided items">
+          <div class="item">
+            <div class="middle aligned content">
+              <i class="idea icon"></i> Has 12% mas que Noviembre.
+            </div>
+          </div>
+          <div class="item">
+            <div class="middle aligned content">
+              <i class="theme icon"></i>Usaste menos agua que el promedio anual.
+            </div>
+          </div>
+          <div class="item">
+            <div class="middle aligned content">
+              <i class="meh icon"></i> Un amigo tuyo te ha superado en este mes.
+            </div>
+          </div>
+        </div>
+
+        <div class="ui hidden divider"></div>
+        <div class="ui raised segment">
+          <h4 class="ui header">Ahorrar nunca fue tan facil..</h4>
+          <div class="ui divided items">
+            <div class="item">
+              <div class="ui tiny image">
+                <img src="/gif/source.gif">
+              </div>
+              <div class="middle aligned content">
+                Apaga las luces cuando no las necesites.
+              </div>
+            </div>
+            <a class="ui blue button right floated">Ver mas..</a>
+            <div class="ui hidden divider"></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="ten wide column">
+        <div class="field">
+          <div class="ui header">
+            <i class="blue bar chart icon"></i>
+            <div class="content">
+              Tus ultimos 12 meses
+              <div class="sub header"><small>Tu vs el mas ahorrador de tu vecindario</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="ui hidden divider "></div>
+
+
+        <div class=" chart-container" style="position: relative; height:25vh; width:40vw">
+          <canvas id="myChart"></canvas>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+  </div>
+  <div class="ui tab " data-tab="reto">
+    <h2 class="ui header">
+      <i class="red flag checkered  icon"></i>
+      <div class="content">
+        Resumen Trimestral
+        <div class="sub header">Noviembre 2017</div>
+      </div>
+    </h2>
+
+    <div class="ui teal progress" id="example3">
+      <div class="bar">
+        <div class="progress">
+
+        </div>
+      </div>
+    </div>
+    <div class="ui hidden divider"></div>
+    <div class="ui pointing secondary menu trimestre">
+      <a class="active item trimestre" data-tab="tri1">1er Trimestre  </a>
+      <a class="item trimestre" data-tab="tri2">2do Trimestre</a>
+      <a class="item trimestre" data-tab="tri3">3er Trimestre</a>
+      <a class="item trimestre" data-tab="tri4">4to Trimestre</a>
+    </div>
+    <div class="ui hidden divider"></div>
+    <div class="ui active tab " data-tab="tri1">
+      <div class="ui three column grid">
+        <div class="column">
+          <div class="ui card">
+            <div class="content">
+              <div class="right floated meta"><i class="share icon"></i></div>
+              Enero
+            </div>
+            <div class="content">
+              <div class="field">
+                <i class="ui green check icon"></i>Puntualidad
+              </div>
+              <div class="field">
+                <i class="ui green check icon"></i>Eficiencia
+              </div>
+            </div>
+            <div class="content">
+              <div class="field">Recomendaciones</div>
+              <div class="ui bulleted list">
+                <div class="item">No seas... </div>
+                <div class="item">No leas..</div>
+                <div class="item">Que quieres?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui card">
+            <div class="content">
+              <div class="right floated meta"><i class="share icon"></i></div>
+              Febrero
+            </div>
+            <div class="content">
+              <div class="field">
+                <i class="ui green check icon"></i>Puntualidad
+              </div>
+              <div class="field">
+                <i class="ui green check icon"></i>Eficiencia
+              </div>
+            </div>
+            <div class="content">
+              <div class="field">Recomendaciones</div>
+              <div class="ui bulleted list">
+                <div class="item">No seas... </div>
+                <div class="item">No leas..</div>
+                <div class="item">Que quieres?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui card">
+            <div class="content">
+              <div class="right floated meta"><i class="share icon"></i></div>
+              Marzo
+            </div>
+            <div class="content">
+              <div class="field">
+                <i class="ui green check icon"></i>Puntualidad
+              </div>
+              <div class="field">
+                <i class="ui green check icon"></i>Eficiencia
+              </div>
+            </div>
+            <div class="content">
+              <div class="field">Recomendaciones</div>
+              <div class="ui bulleted list">
+                <div class="item">No seas... </div>
+                <div class="item">No leas..</div>
+                <div class="item">Que quieres?</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="ui tab " data-tab="tri2">
+      <div class="ui three column grid">
+        <div class="column">
+          <div class="ui card">
+            <div class="content">
+              <div class="right floated meta"><i class="share icon"></i></div>
+              Abril
+            </div>
+            <div class="content">
+              <div class="field">
+                <i class="ui green check icon"></i>Puntualidad
+              </div>
+              <div class="field">
+                <i class="ui green check icon"></i>Eficiencia
+              </div>
+            </div>
+            <div class="content">
+              <div class="field">Recomendaciones</div>
+              <div class="ui bulleted list">
+                <div class="item">No seas... </div>
+                <div class="item">No leas..</div>
+                <div class="item">Que quieres?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui card disabled">
+            <div class="content">
+              <div class="right floated meta"><i class="share icon"></i></div>
+              Mayo
+            </div>
+            <div class="content">
+              <div class="field">
+                <i class="ui red remove icon"></i>Puntualidad
+              </div>
+              <div class="field">
+                <i class="ui green check icon"></i>Eficiencia
+              </div>
+            </div>
+            <div class="content">
+              <div class="field">Recomendaciones</div>
+              <div class="ui bulleted list">
+                <div class="item">No seas... </div>
+                <div class="item">No leas..</div>
+                <div class="item">Que quieres?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui card">
+            <div class="content">
+              <div class="right floated meta"><i class="share icon"></i></div>
+              Junio
+            </div>
+            <div class="content">
+              <div class="field">
+                <i class="ui green check icon"></i>Puntualidad
+              </div>
+              <div class="field">
+                <i class="ui green check icon"></i>Eficiencia
+              </div>
+            </div>
+            <div class="content">
+              <div class="field">Recomendaciones</div>
+              <div class="ui bulleted list">
+                <div class="item">No seas... </div>
+                <div class="item">No leas..</div>
+                <div class="item">Que quieres?</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="ui tab " data-tab="tri3">
+    </div>
+    <div class="ui tab " data-tab="tri4">
+    </div>
+
+  </div>
+</div>
+<section class="ui container " style="overflow-y:scroll; overflow-x:hidden;"></section>
+<footer></footer>
+
